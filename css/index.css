@@ -6,43 +6,26 @@
 
 /* Theme colors */
 :root {
-	--color-gray-20: #e0e0e0;
-	--color-gray-50: #C0C0C0;
-	--color-gray-90: #333;
+	--color-black: #0C0C0C;
+	--color-brown: #481E14;
+	--color-rust: #9B3922;
+	--color-coral: #F2613F;
 
-	--background-color: #fff;
+	--text-color: #e0d5cf;
+	--text-color-link: var(--color-coral);
+	--text-color-link-active: #ff8a6f;
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050F;
+	--background-color: var(--color-black);
 
-	--syntax-tab-size: 2;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
-
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
-
-		--background-color: #15202b;
-	}
+	--color-gray-20: #2a2a2a;
+	--color-gray-50: #444;
+	--color-gray-90: #999;
 }
 
 
 /* Global stylesheet */
 * {
 	box-sizing: border-box;
-}
-
-@view-transition {
-	navigation: auto;
 }
 
 html,
@@ -106,11 +89,7 @@ li {
 a[href] {
 	color: var(--text-color-link);
 }
-a[href]:visited {
-	color: var(--text-color-link-visited);
-}
-a[href]:hover,
-a[href]:active {
+a[href]:hover {
 	color: var(--text-color-link-active);
 }
 
@@ -123,7 +102,11 @@ main :first-child {
 }
 
 header {
-	border-bottom: 1px dashed var(--color-gray-20);
+	border-bottom: 1px solid var(--color-brown);
+}
+
+h1 {
+	color: var(--color-coral);
 }
 
 #skip-link {
@@ -149,7 +132,7 @@ header {
 	justify-content: space-between;
 	gap: .5em 1em;
 	list-style: "";
-	border-top: 1px dashed var(--color-gray-20);
+	border-top: 1px dashed var(--color-brown);
 	padding: 1em 0;
 }
 .links-nextprev > * {
@@ -201,12 +184,20 @@ header {
 	padding: 1em;
 }
 .home-link {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
 	flex-grow: 1;
-	font-size: 1em; /* 16px /16 */
+	font-size: 2em; /* 16px /16 */
 	font-weight: 700;
+	color: var(--color-coral) !important;
 }
 .home-link:link:not(:hover) {
 	text-decoration: none;
+}
+.home-logo {
+	width: 1.4em;
+	height: 1.4em;
 }
 
 /* Nav */
